@@ -36,6 +36,14 @@ If all is well, you should see the following output:
 
 > LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
 
+You can interact with the chatbot in the Studio Web UI:
+
+![Screenshot 2024-12-06 at 4 15 14 PM](https://github.com/user-attachments/assets/bd39a211-34c3-4d72-87ef-79efb382e334)
+
+You can configure chat for any Twitter/X user by providing the handle here: 
+
+![Screenshot 2024-12-06 at 4 15 39 PM](https://github.com/user-attachments/assets/c9a12f72-4f45-42a9-b8a6-e30cc15128c4)
+
 ## How it works
 
 Reply gAI uses LangGraph to create a workflow that mimics a Twitter user's writing style. Here's how the system operates:
