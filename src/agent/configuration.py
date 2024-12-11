@@ -10,7 +10,6 @@ from dataclasses import dataclass
 class Configuration:
     """The configurable fields for the chatbot."""
     username: str = "elonmusk"
-    update_tweet: bool = False
     max_tweet_age_seconds: int = 86400  # 24 hours (24 * 60 * 60 seconds)
 
     @classmethod

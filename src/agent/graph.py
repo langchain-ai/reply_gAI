@@ -11,6 +11,7 @@ from arcadepy import Arcade
 
 import agent.configuration as configuration
 from agent.prompts import CHAT_INSTRUCTIONS
+from agent.utils import get_all_tweets
 
 def get_tweets(state: MessagesState, config: RunnableConfig, store: BaseStore) -> dict:
     """Fetch and store recent tweets for a specified Twitter user.
@@ -53,18 +54,11 @@ def get_tweets(state: MessagesState, config: RunnableConfig, store: BaseStore) -
 
     # Search for recent tweets (last 7 days) on X (Twitter)
     username = configurable.username
-    # TODO: Check with Arcade about max_results
-    inputs = {"username": username, "max_results": 100}
-    response = client.tools.execute(
-        tool_name=TOOL_NAME,
-        inputs=inputs,
-        user_id=USER_ID,
-    )
 
-    # Format tweets into a string
-    tweets = response.output.value['data']
+    # Get all the tweets
+    tweets = get_all_tweets(client, username, USER_ID, TOOL_NAME)
 
-    # Load the tweet  
+    # Load the tweets into memory
     namespace_for_memory = (username, "tweets")
     for tweet in tweets:
         memory_id = tweet.get('id',uuid.uuid4())
