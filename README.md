@@ -1,6 +1,8 @@
-# Reply gAI
+# reply gAI
 
 Reply gAI is an AI-powered personal assistant for Twitter/X users that creates interactive chatbot personas. It automatically collects a user's Tweets, stores them in long-term memory, and uses Retrieval-Augmented Generation (RAG) to generate responses that match their unique writing style and viewpoints.
+
+![reply_gai](https://github.com/user-attachments/assets/91e5bf27-04c0-4584-817f-16e43296cd34)
 
 ## 🚀 Quickstart
 
@@ -29,11 +31,11 @@ You should see the following output and Studio will open in your browser:
 
 In the `configuration` tab, add the Twitter/X handle of any user: 
 
-![Screenshot 2024-12-06 at 4 15 39 PM](https://github.com/user-attachments/assets/c9a12f72-4f45-42a9-b8a6-e30cc15128c4)
+![Screenshot 2024-12-11 at 1 30 51 PM](https://github.com/user-attachments/assets/10cc592b-9b1d-4132-87e1-db3e65257fc9)
 
-You can interact with a chatbot persona for that user:
+Then, just interact with a chatbot persona for that user:
 
-![Screenshot 2024-12-06 at 4 15 14 PM](https://github.com/user-attachments/assets/bd39a211-34c3-4d72-87ef-79efb382e334)
+![Screenshot 2024-12-11 at 1 30 30 PM](https://github.com/user-attachments/assets/6bbfbd5a-40a2-46c5-b329-c66e1c1952d8)
 
 ## How it works
 
@@ -69,7 +71,11 @@ In the quickstart, we use a [locally running LangGraph server](https://langchain
 
 This uses the `langraph dev` command, which [launches the server in development mode](https://langchain-ai.github.io/langgraph/cloud/reference/cli/#dev). 
 
-Tweets are saved to the LangGraph store, which uses Postgres as is saved in the `.langgraph_api/` directory. 
+Tweets are saved to the [LangGraph store](https://langchain-ai.github.io/langgraph/concepts/persistence/#memory-store), which uses Postgres for persistence and is saved in the `.langgraph_api/` folder in this directory. 
+
+You can visualize Tweets saved per each user in the Store directly with LangGraph Studio.
+
+![Screenshot 2024-12-11 at 1 31 09 PM](https://github.com/user-attachments/assets/41a06245-0659-4309-b7e5-e78a2f108c2b)
 
 ## Deployment 
 
@@ -77,6 +83,10 @@ If you want to want to launch the server in a mode suitable for production, you 
 
 * Add `LANGSMITH_API_KEY` to your `.env` file.
 * Ensure [Docker](https://docs.docker.com/engine/install/) is running on your machine.
-* [Run with `langgraph up`](https://langchain-ai.github.io/langgraph/cloud/reference/cli/#up): `luvx --refresh --from "langgraph-cli[inmem]" --with-editable . --python 3.11 langgraph up`
+* [Run with `langgraph up`](https://langchain-ai.github.io/langgraph/cloud/reference/cli/#up)
+
+```bash
+luvx --refresh --from "langgraph-cli[inmem]" --with-editable . --python 3.11 langgraph up
+```
 
 See [Module 6](https://github.com/langchain-ai/langchain-academy/tree/main/module-6) of LangChain Academy for a detailed walkthrough of deployment options with LangGraph.
