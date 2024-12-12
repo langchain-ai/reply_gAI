@@ -1,7 +1,7 @@
 {
     "dockerfile_lines": [],
     "graphs": {
-      "reply_gai": "./src/agent/graph.py:graph"
+      "reply_gai": "./src/chatbot/graph.py:graph"
     },
     "python_version": "3.11",
     "env": "./.env",

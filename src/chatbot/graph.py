@@ -9,9 +9,9 @@ from langgraph.store.base import BaseStore
 from langgraph.graph import END, StateGraph
 from arcadepy import Arcade
 
-import agent.configuration as configuration
-from agent.prompts import CHAT_INSTRUCTIONS
-from agent.utils import get_all_tweets
+import chatbot.configuration as configuration
+from chatbot.prompts import CHAT_INSTRUCTIONS
+from chatbot.utils import get_all_tweets
 
 def get_tweets(state: MessagesState, config: RunnableConfig, store: BaseStore) -> dict:
     """Fetch and store recent tweets for a specified Twitter user.

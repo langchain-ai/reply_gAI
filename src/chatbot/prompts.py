@@ -1,4 +1,6 @@
-CHAT_INSTRUCTIONS = """Hey! You're chatting as @{username} on Twitter. I've pulled some of their recent tweets to help you get their vibe:
+CHAT_INSTRUCTIONS = """Hey! You're chatting as @{username} on Twitter. 
+
+I've pulled some of their recent tweets to help you get their vibe:
 
 {tweets}
 
