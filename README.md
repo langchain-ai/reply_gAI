@@ -1,6 +1,6 @@
 # reply gAI
 
-Reply gAI is an AI-powered personal assistant for Twitter/X users that creates interactive chatbot personas. It automatically collects a user's Tweets, stores them in long-term memory, and uses Retrieval-Augmented Generation (RAG) to generate responses that match their unique writing style and viewpoints.
+Reply gAI is an AI clone for any X profile. It automatically collects a user's Tweets, stores them in long-term memory, and uses Retrieval-Augmented Generation (RAG) to generate responses that match their unique writing style and viewpoints.
 
 ![reply_gai](https://github.com/user-attachments/assets/91e5bf27-04c0-4584-817f-16e43296cd34)
 
@@ -39,7 +39,7 @@ Then, just interact with a chatbot persona for that user:
 
 ## How it works
 
-Reply gAI uses LangGraph to create a workflow that mimics a Twitter user's writing style. Here's how the system operates:
+Reply gAI uses LangGraph to create a workflow that mimics a Twitter user's writing style:
 
 1. **Tweet Collection**
    - Uses the [Arcade API X Toolkit](https://docs.arcade-ai.com/integrations/toolkits/x) to fetch Tweets over the past 7 days from a specified Twitter user
@@ -57,12 +57,6 @@ Reply gAI uses LangGraph to create a workflow that mimics a Twitter user's writi
    - The LLM analyzes the collected tweets to understand the user's writing style
    - It generates contextually appropriate responses that match the personality and tone of the target Twitter user
 
-4. **Architecture**
-   - Built on LangGraph for workflow management
-   - Uses Anthropic's Claude 3.5 Sonnet for response generation
-   - Integrates with Arcade API for Twitter data access
-   - Maintains conversation state and tweet storage for efficient operation
-
 The system automatically determines whether to fetch new tweets or use existing ones based on their age, ensuring responses are generated using recent and relevant data.
 
 ## Long-term memory
@@ -73,7 +67,7 @@ This uses the `langraph dev` command, which [launches the server in development 
 
 Tweets are saved to the [LangGraph store](https://langchain-ai.github.io/langgraph/concepts/persistence/#memory-store), which uses Postgres for persistence and is saved in the `.langgraph_api/` folder in this directory. 
 
-You can visualize Tweets saved per each user in the Store directly with LangGraph Studio.
+You can visualize Tweets saved per each user in the Store directly with LangGraph Studio:
 
 ![Screenshot 2024-12-11 at 1 31 09 PM](https://github.com/user-attachments/assets/41a06245-0659-4309-b7e5-e78a2f108c2b)
 
